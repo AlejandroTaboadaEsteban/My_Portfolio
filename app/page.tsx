@@ -424,13 +424,24 @@ export default function Portfolio() {
                     <ProjectDialog
                       title="Missio OS: AI-Driven Digital Assistant for Task Optimization"
                       content={{
-                        overview: `For my bachelor thesis I designed, built and deployed "Missio OS,"
-                          an AI-powered digital assistant that integrates via the Model Context
-                          Protocol with Gmail, Google Calendar, Trello, GitHub and Drive.
-                          Overnight it scans every data source to draft a personalised plan
-                          for each team member; during working hours it acts like a chatbot
-                          inside the company workflow—surfacing hidden blockers, drafting
-                          summaries and automating routine tasks to accelerate decision-making.`,
+                        overview: `For my bachelor thesis with the company Missio IA, I designed, 
+                          built and deployed "Missio OS", an AI-powered digital assistant 
+                          that integrates via the Model Context Protocol with Gmail, Google Calendar, 
+                          Trello, GitHub and Drive. 
+                          <br /><br />
+                          Overnight it scans every data source to draft a 
+                          personalised plan for each team member, and find hidden blockers inside the 
+                          company workflow and proposes solutions for them; during working hours it acts 
+                          like a chatbot inside the company workflow, responding to all user requests, 
+                          that include advanced actions, such as surfacing receiving a meeting transcription 
+                          and analysing it, by creating summaries and automating tasks derived from that 
+                          meeting. It also analyses every received email and if it comes from a client or 
+                          potential client it creates all the necessary tasks, starts them, and assigns 
+                          them to the ideal team member for them.
+                          <br /><br />
+                          It represents a huge leap from previous enterprise digital assistants because it 
+                          adds key functionalities and characteristics such as proactivity and predefined
+                          workflows. `,
                         methodology: [
                           "Architecture design using MCP for seamless tool orchestration",
                           "Connector development: Gmail, Calendar, Trello, GitHub, Drive & custom MCP servers",
@@ -489,17 +500,41 @@ export default function Portfolio() {
                     <ProjectDialog
                       title="Samplex: AI-Powered Exam Prep App"
                       content={{
-                        overview: `Samplex is a mobile app designed to make exam preparation simpler, smarter and more personalized. 
-                          By entering an exam date, course name and content PDF, students receive a custom daily study roadmap—including 
-                          mini-tests, theory reviews and long-answer questions to complete. Progress builds a visible streak on the 
-                          home screen, while an "Emergency Exam" mode creates an intensive one-day plan for last-minute crams. 
-                          Samplex supports multiple concurrent plans and offers secure login via email/password or Google, combining 
-                          Jetpack Compose, Kotlin and Firebase for a seamless user experience.`,
+                        overview: `Samplex is a mobile app built with Jetpack Compose and Kotlin to make 
+                        exam preparation simpler, smarter and deeply personalized. Students start by 
+                        entering an exam date, course name and uploading a PDF of their course material. 
+                        Behind the scenes, our app extracts text from the PDF and calls three chained 
+                        OpenAI o4-mini models, deployed as Firebase Cloud Functions, in order to first draft a 
+                        day-by-day roadmap structure, then generate theory summaries, and finally produce 
+                        quizzes and long-answer questions in JSON format.
+                        <br /><br />
+                        Once the roadmap is ready, it's saved in Firestore under each user's “exams” 
+                        collection and rendered as an interactive timeline: past days turn green, upcoming 
+                        days stay blue, today's block is highlighted purple, and the final “emergency” day 
+                        glows yellow. Tapping any completed or current day opens its activities, summaries, 
+                        multiple-choice mini-tests and AI-graded essays, while future days remain locked. 
+                        All responses are stored so that students can revisit their answers and corrections 
+                        at any time
+                        <br /><br />
+                        On the main screen, users see all their active plans at a glance: completed exams 
+                        marked in green, pending ones in blue, plus a motivational quote fetched randomly 
+                        each session. A calendar view displays exam dates with red dots, and a visible 
+                        streak counter rewards daily consistency,missing a day resets it to zero, adding a 
+                        gamified twist. Secure authentication comes via email/password or Google Sign-In, 
+                        with robust validation and clear in-app error messaging. For last-minute crammers, 
+                        the “Emergency Exam” mode automatically shifts the exam date to tomorrow and 
+                        generates an intensive one-day plan. Meanwhile, a Firebase-driven notification 
+                        system pings any student who hasn't completed their daily work at 14:00, helping 
+                        sustain momentum throughout exam season
+                        <br /><br />
+                        Combined with a MVVM architecture, modular Kotlin code and Firebase's 
+                        real-time database, Samplex delivers a seamless, end-to-end AI-powered study 
+                        companion.`,
                         methodology: [
-                          "Cross-functional agile workflow with GitHub branches & weekly merges to main",
-                          "Collaborative feature ownership: UI & calendar (Pablos); AI roadmap & notifications (Sergio); Google Sign-In & UX polish (Martín); JSON-driven roadmap & quizzes (Alejandro)",
-                          "AI backend via Firebase Cloud Functions, orchestrating three OpenAI o4-mini models for structure, content generation and question correction",
-                          "Prompt engineering and error-recovery routines to ensure reliable JSON outputs and minimize costly model calls"
+                          "Agile development pipeline using GitHub feature branches, pull requests and CI/CD for rapid, high-quality iterations",
+                          "AI orchestration via Firebase Cloud Functions, coordinating three OpenAI o4-mini models for roadmap structure, content generation and quiz correction.",
+                          "Robust prompt engineering and error-recovery routines to ensure reliable JSON outputs and minimize costly model calls.",
+                          "MVVM architecture in Kotlin with JSON-driven modules for dynamic roadmap rendering and quiz workflows."
                         ],
                         results: [
                           "Demonstrated feasibility of an Android exam-prep assistant with dynamic AI-generated roadmaps",
@@ -552,12 +587,32 @@ export default function Portfolio() {
                     <ProjectDialog
                       title="Anomaly Detection & Prediction in ICUs"
                       content={{
-                        overview: `In collaboration with the Pediatric University Hospital Niño Jesús, this project built a real-time anomaly detection and change-point prediction system on continuous ICU sensor streams (vital signs such as ECG, blood pressure, SpO₂, respiratory rate) from the open VitalDB dataset.
-                          After addressing legal roadblocks that prevented use of the hospital's own data, we leveraged VitalDB's 486 K+ numeric and waveform tracks from 6 388 surgical cases to prototype a pipeline for detecting deviations in patients' vitals—filtering false alarms and highlighting genuine risks.
-                          The system integrates statistical methods, unsupervised and deep-learning models to raise early alerts and anticipate dangerous trends, aiming to reduce alarm fatigue and improve clinical response times.`,
+                        overview: `In collaboration with the Pediatric University Hospital Niño Jesús, this 
+                        project built a real-time anomaly detection and change-point prediction system on 
+                        continuous ICU sensor streams (vital signs such as ECG, blood pressure, SpO₂ and 
+                        respiratory rate) drawn from the open VitalDB dataset. After addressing legal 
+                        roadblocks that prevented us from using the hospital's proprietary data, we leveraged VitalDB's 
+                        486,000+ numeric and waveform tracks from 6,388 surgical cases to prototype a full end-to-end pipeline 
+                        that filters out noise, normalizes and sequences signals via sliding windows, and flags only the most 
+                        significant deviations for clinical review
+                        <br /><br />
+                        The core processing pipeline combines traditional statistical models, ARIMA forecasting for threshold-based 
+                        alarms and CUSUM change-point tests, with unsupervised learners (One-Class SVM, Isolation Forest) and 
+                        deep-learning predictors (LSTM, dense/CNN/Transformer autoencoders). Each module generates its own 
+                        set of alerts, and we apply a consensus filter to suppress false positives. A lightweight Python 
+                        service ingests live streams, batches them into overlapping 100-500-sample windows, applies Min-Max 
+                        or Z-score normalization, and dispatches each window through the ensemble models for parallel scoring
+                        <br /><br />
+                        To bridge research and practice, we built a simple dashboard that highlights detected anomalies on 
+                        synchronized time axes, overlays change-point markers when patients' vitals undergo sudden regime 
+                        shifts, and allows clinicians to zoom into any flagged segment for detailed waveform inspection. 
+                        By correlating alerts across multiple signal types (e.g., spikes in heart rate without matching 
+                        arterial pressure changes), the system aims to reduce alarm fatigue, provide a 10-15 minute early 
+                        warning window before critical events, and ultimately integrate seamlessly into existing ICU 
+                        monitoring workflows.`,
                         methodology: [
                           "Data sourcing & preprocessing: Subsampled VitalDB; handled missing values via dropna and window-based continuous segments; Min-Max & Z-score normalization.",
-                          "Sliding-window framing: Converted each signal to overlapping sequences (lengths 100–1 000, overlaps 20–200) for temporal context.",
+                          "Sliding-window framing: Converted each signal to overlapping sequences (lengths 100-1 000, overlaps 20–200) for temporal context.",
                           "Statistical models: ARIMA forecasting for threshold-based anomaly flags; CUSUM & likelihood-ratio change-point detection on smoothed vitals.",
                           "Unsupervised ML: Trained One-Class SVM & Isolation Forest on multivariate sequences to isolate outliers in heart rate & arterial pressure.",
                           "Deep learning: Built LSTM predictors and three autoencoder variants (Dense, CNN, Transformer) to reconstruct normal baselines and flag high-error events.",
@@ -567,7 +622,7 @@ export default function Portfolio() {
                         results: [
                           "Up to 92% true-positive rate for simulated anomalies on held-out VitalDB segments, reducing false-alarm rate by ~30% compared to raw thresholding.",
                           "35% fewer nuisance alerts in heart rate monitoring, validated through cross-validation on 5,000+ HR sequences.",
-                          "Early warning window of 10–15 min before simulated critical events via ARIMA & LSTM trend forecasts.",
+                          "Early warning window of 10-15 min before simulated critical events via ARIMA & LSTM trend forecasts.",
                           "Change-point detection accuracy of 87% in detecting regime shifts, aiding clinicians in recognizing transitions (e.g., onset of tachycardia).",
                           "Prototype achieved real-time throughput (~50 ms per sliding window) when deployed on Google Cloud Run."
                         ],
@@ -617,23 +672,36 @@ export default function Portfolio() {
                     <ProjectDialog
                       title="Football Player Performance Prediction App"
                       content={{
-                        overview: `Built at Universidad Carlos III between Sep 2024–Dec 2024, this web application helps fantasy-football managers make data-backed decisions.
-                          We scrape LaLiga match data, player stats and Fantasy Football points via APIs and Selenium, then feed them into models that predict:
-                          • Game results (win/draw/lose)
-                          • Individual player scores
-                          • Future market values
-                          An explainable-AI layer breaks down each forecast, and a slick UI lets users filter by team or player to explore recommendations at a glance.`,
+                        overview: `This web application helps fantasy-football managers make data-backed decisions. 
+                        We scrape LaLiga match data, player statistics and official Fantasy Football scores using a 
+                        mix of public APIs and Selenium-driven browser automation. That raw data is then cleaned. handling 
+                        missing entries, normalising per-90 statistics and encoding categorical features like position 
+                        and opponent strength, before being fed into our prediction models.
+                        <br /><br />
+                        Behind the scenes, we engineer a rich set of time-windowed features: recent form trends, goal 
+                        involvement rates, fixture difficulty and rolling averages over 7/14/30-day spans. These 
+                        features power both our Random Forest classifier for match outcomes and a suite of 
+                        regressors (Gradient Boosting & Random Forest) that forecast individual player scores and 
+                        projected market values. To ensure robustness, we retrain models weekly on the latest 
+                        fixtures and automatically validate performance using a reserved hold-out set.
+                        <br /><br />
+                        The results are served through a sleek Node.js/Express backend and a React frontend that lets 
+                        users filter by team, position or upcoming matchday. Each prediction comes with SHAP-generated 
+                        explanations, so managers can see exactly why a player's score or value moved in a certain 
+                        direction. Under the hood, Docker-ized services run the full scrape→train→serve pipeline in under 
+                        two minutes, making it easy to deploy updated forecasts and keep the app responsive during 
+                        high-traffic matchweeks.
+                        `,
                         methodology: [
                           "Data Extraction: Automated scraping with Selenium + direct API pulls for match events, player metrics and fantasy points",
                           "Outcome Modeling: Random Forest classifier (100 trees, max depth 20) trained on 154 played vs. 226 upcoming games (80/20 split) to predict match results",
                           "Score Prediction: Gradient Boosting & Random Forest regressors (R²≈0.10–0.13) using game context and historic points per player per match week",
                           "Market-Value Forecasting: Gradient Boosting (R²≈0.40) on merged value-over-time datasets, incorporating point trends over 7/14/30-day windows",
-                          "Explainability: SHAP-based insights reveal feature importances—e.g. form, opponent strength, price momentum—so users see 'why' behind each pick",
-                          "Agile Dev: Weekly sprints on GitHub with feature branches, CI/CD pipelines, peer reviews and automated tests"
+                          "Explainability: SHAP-based insights reveal feature importances, such as form, opponent strength, price momentum, so users see 'why' behind each pick",
                         ],
                         results: [
                           "Match-result accuracy: ~68% on held-out fixtures (beating baseline odds)",
-                          "Score R²: 0.13 for Random Forest, 0.10 for Gradient Boosting—enough signal to rank top-performers reliably",
+                          "Score R²: 0.13 for Random Forest, 0.10 for Gradient Boosting, enough signal to rank top-performers reliably",
                           "Market-value R²: 0.40, enabling smart 'buy low, sell high' alerts for players whose value lags their form",
                           "User uptake: Prototype dashboard saw 80% positive feedback in usability tests, with managers citing explainability as key",
                           "Load performance: Full pipeline (scrape → predict → serve) runs end-to-end in under 2 minutes"
@@ -682,11 +750,29 @@ export default function Portfolio() {
                     <ProjectDialog
                       title="Deep Learning Model to Promote Recycling"
                       content={{
-                        overview: `In a two-person team, we built a web-based tool that lets users snap or upload a photo of household waste and instantly identifies its type—plastic, paper, glass, metal or organic—and suggests the right dumpster.
-                          We assembled a custom image dataset (5,000+ labeled photos) and implemented data-cleaning pipelines to normalize lighting, remove backgrounds and augment via rotations and flips. A student-friendly frontend (Flask + HTML/CSS) wraps a Keras model so that anyone can start recycling correctly with a single click.`,
+                        overview: `In a two person team, we built a web-based tool that lets users snap or 
+                        upload a photo of household waste and instantly identifies its type, plastic, paper,   
+                        glass, metal or organic, and suggests the right dumpster. A custom image dataset of over 
+                        5 000 labeled photos was assembled, and we implemented data-cleaning pipelines to normalize 
+                        lighting, remove backgrounds and augment samples through rotations, flips and color jitter
+                        <br /><br />
+                        The core classification model is a lightweight CNN based on MobileNetV2, trained in Keras 
+                        with an 80/20 split and early stopping on validation loss. We compared it against custom 
+                        5-layer and VGG16-based architectures, ultimately choosing MobileNetV2 for its balance of 
+                        speed and accuracy. Training used the Adam optimizer (lr=1e-4) over 50 epochs with batch size 
+                        32, and performance was evaluated via overall accuracy, per-class precision/recall and 
+                        confusion-matrix analysis.
+                        <br /><br />
+                        For deployment, the final model was wrapped in a Flask REST API and Docker-ized for easy 
+                        local or cloud hosting. Inference runs at roughly 25 ms per image on a standard CPU, 
+                        delivering near-instant feedback. A simple HTML/CSS front end calls the API, displays the 
+                        classification result and recommended dumpster icon, and because the entire pipeline lives 
+                        in a single container, it can be spun up on any machine with Docker installed for plug-and-play 
+                        recycling assistance.
+                        `,
                         methodology: [
-                          "Data Preprocessing: Resized all images to 224×224 px, applied color-normalization and synthetic augmentation (rotation, zoom, shifts) to boost dataset to ~20,000 samples.",
-                          "Model Prototyping: Compared three CNN architectures—custom 5-layer CNN, transfer-learned VGG16 and MobileNetV2—initialized with ImageNet weights.",
+                          "Data Preprocessing: Resized all images to 224x224 px, applied color-normalization and synthetic augmentation (rotation, zoom, shifts) to boost dataset to ~20,000 samples.",
+                          "Model Prototyping: Compared three CNN architectures: custom 5-layer CNN, transfer-learned VGG16 and MobileNetV2, initialized with ImageNet weights.",
                           "Training Pipeline: 80/20 train/val split; Adam optimizer (lr=1e-4); early stopping on val loss; batch size 32; trained 50 epochs per model.",
                           "Evaluation: Used accuracy, precision/recall per class and confusion matrix to select the best model. MobileNetV2 hit the sweet spot of speed vs. performance.",
                           "Deployment: Wrapped the final MobileNetV2 model as a REST API with Flask, Docker-ized for easy local or cloud deployment."
@@ -812,7 +898,7 @@ export default function Portfolio() {
                           "Robust collision handling across 5 block types, mushrooms and flag triggers, with zero major bugs after iterative testing.",
                           "Dynamic enemy system: 25% chance Koopa Troopa, 75% Goomba, each with correct hitboxes and behavior.",
                           "UI & scoring: lives, coins and time tracked accurately; victory and game-over screens display final stats.",
-                          "Learning outcomes: Significant mastery of Python, Pyxel, OOP design and game-loop debugging—project served as final course deliverable."
+                          "Learning outcomes: Significant mastery of Python, Pyxel, OOP design and game-loop debugging project served as final course deliverable."
                         ],
                         technologies: [
                           "Python 3",
