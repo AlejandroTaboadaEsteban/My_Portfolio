@@ -981,7 +981,7 @@ export default function Portfolio() {
                     <h3 className="font-semibold text-sm">Location</h3>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Madrid, Spain</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">A Coruña, Spain</p>
                   </div>
                 </div>
               </CardContent>
