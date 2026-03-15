@@ -133,17 +133,19 @@ export default function Portfolio() {
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? "dark bg-slate-900" : "bg-white"}`}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center h-16">
-            {/* Left side - Name */}
-            <div className="text-xl font-semibold text-black dark:text-white pl-1">Alejandro Taboada Esteban</div>
+        <div className="max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="flex justify-between items-center min-h-16 py-2">
+            {/* Left side - Name (hidden on small screens) */}
+            <div className="hidden lg:block text-xl font-semibold text-black dark:text-white">
+              Alejandro Taboada Esteban
+            </div>
 
             {/* Right side - Navigation and theme toggle */}
-            <div className="flex items-center">
-              <div className="flex space-x-6 mr-8">
+            <div className="flex items-center justify-between w-full lg:w-auto gap-2">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 md:gap-6">
                 <button
                   onClick={() => scrollToSection("home")}
-                  className={`px-3 py-2 rounded-md text-lg font-medium transition-colors ${
+                  className={`px-2 sm:px-3 py-2 rounded-md text-sm sm:text-base md:text-lg font-medium transition-colors ${
                     activeSection === "home"
                       ? "text-blue-600 dark:text-blue-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -153,7 +155,7 @@ export default function Portfolio() {
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className={`px-3 py-2 rounded-md text-lg font-medium transition-colors ${
+                  className={`px-2 sm:px-3 py-2 rounded-md text-sm sm:text-base md:text-lg font-medium transition-colors ${
                     activeSection === "about"
                       ? "text-blue-600 dark:text-blue-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -163,7 +165,7 @@ export default function Portfolio() {
                 </button>
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className={`px-3 py-2 rounded-md text-lg font-medium transition-colors ${
+                  className={`px-2 sm:px-3 py-2 rounded-md text-sm sm:text-base md:text-lg font-medium transition-colors ${
                     activeSection === "projects"
                       ? "text-blue-600 dark:text-blue-400"
                       : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -173,13 +175,13 @@ export default function Portfolio() {
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="px-4 py-2 rounded-md text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                  className="px-3 sm:px-4 py-2 rounded-md text-sm sm:text-base md:text-lg font-medium bg-blue-600 text-white hover:bg-blue-700 transition-colors"
                 >
                   Contact
                 </button>
               </div>
-              <Button variant="ghost" size="lg" className="p-2" onClick={() => setDarkMode(!darkMode)}>
-                {darkMode ? <Moon className="h-6 w-6" /> : <Sun className="h-6 w-6" />}
+              <Button variant="ghost" size="lg" className="p-2 flex-shrink-0" onClick={() => setDarkMode(!darkMode)}>
+                {darkMode ? <Moon className="h-5 w-5 sm:h-6 sm:w-6" /> : <Sun className="h-5 w-5 sm:h-6 sm:w-6" />}
               </Button>
             </div>
           </div>
@@ -207,7 +209,7 @@ export default function Portfolio() {
 
             {/* Right side - Content */}
             <div className="text-center lg:text-left lg:pl-4">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in whitespace-nowrap">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 dark:text-white mb-4 animate-fade-in">
                 Alejandro Taboada Esteban
               </h1>
               <h2 className="text-xl sm:text-2xl lg:text-3xl mb-6 font-medium">
@@ -267,11 +269,11 @@ export default function Portfolio() {
                 </p>
                 
                 <p className="text-gray-600 dark:text-gray-300 mt-4">
-                  In my final year I balanced studies with back-to-back internships, first at Altia, where I developed my first professional skills with projects like RAG-powered chatbots and applying academic knowledge to real projects, and then at Bertrandt Technologies, developing computer-vision AI systems to keep drivers safe.
+                  In my final year I balanced studies with back-to-back internships, first at Altia, where I developed my first professional skills with projects like RAG-powered chatbots, and then at Bertrandt Technologies, developing computer-vision AI systems to keep drivers safe. Simultaneously, I held a part-time AI Engineer role at Missio IA, where I enjoyed turning ideas into user-oriented products.
                 </p>
                 
                 <p className="text-gray-600 dark:text-gray-300 mt-4">
-                  Simultaneously, I held a part-time AI Engineer role at Missio IA, discovering how much I enjoy turning ideas into user-oriented products and brainstorming solutions that matter. These experiences fuel the way I build, learn and collaborate every day, and I'm looking forward to keep doing it.
+                  Currently, I'm working at Inditex developing internal AI-driven applications to enhance data-informed decision making and business processes, where I continue to grow my skills and apply cutting-edge technology to real-world challenges. These experiences fuel the way I build, learn and collaborate every day, and I'm looking forward to keep doing it.
                 </p>
               </CardContent>
             </Card>
@@ -930,80 +932,80 @@ export default function Portfolio() {
             any professional inquiries.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
             <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="flex flex-col items-center">
-                    <Mail className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
-                    <h3 className="font-semibold text-sm">Email</h3>
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <h3 className="font-semibold text-xs sm:text-sm">Email</h3>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-300 break-all">taboadaestebanalex@gmail.com</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 break-all">taboadaestebanalex@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="flex flex-col items-center">
-                    <Phone className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
-                    <h3 className="font-semibold text-sm">Phone</h3>
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <h3 className="font-semibold text-xs sm:text-sm">Phone</h3>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-300">+34 611 018 171</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="flex flex-col items-center">
-                    <Linkedin className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
-                    <h3 className="font-semibold text-sm">LinkedIn</h3>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-300">alejandro-taboada-esteban</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">+34 611 018 171</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <div className="flex flex-col items-center">
-                    <MapPin className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2" />
-                    <h3 className="font-semibold text-sm">Location</h3>
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <Linkedin className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <h3 className="font-semibold text-xs sm:text-sm">LinkedIn</h3>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-sm text-gray-600 dark:text-gray-300">A Coruña, Spain</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">alejandro-taboada-esteban</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600 dark:text-blue-400 mb-2" />
+                    <h3 className="font-semibold text-xs sm:text-sm">Location</h3>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">A Coruña, Spain</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
 
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4 sm:px-0">
             <Button
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => window.open("https://www.linkedin.com/in/alejandro-taboada-esteban/", "_blank")}
             >
-              <Linkedin className="mr-2 h-5 w-5" />
+              <Linkedin className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Connect on LinkedIn
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-transparent"
+              className="w-full sm:w-auto border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 sm:px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-transparent"
               onClick={handleEmailClick}
             >
-              <Mail className="mr-2 h-5 w-5" />
+              <Mail className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
               Send Email
             </Button>
           </div>
@@ -1014,7 +1016,7 @@ export default function Portfolio() {
       <footer className="bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-gray-600 dark:text-gray-300">
-            <p>&copy; 2025 Alejandro Taboada Esteban. All rights reserved.</p>
+            <p>&copy; 2025 Alejandro Taboada Esteban</p>
           </div>
         </div>
       </footer>
